@@ -3,15 +3,14 @@ import {
   Toolbar,
   Typography,
   IconButton,
+  Button,
   Box
 } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import CartWidget from './CartWidget';
 import { PermIdentity } from '@mui/icons-material';
 import {
-  appBarStyles,
   toolbarStyles,
-  titleStyles,
   iconsBoxStyles,
 } from '../styles/navbar.styles.js';
 
@@ -24,6 +23,8 @@ function Navbar() {
           MI TIENDA
         </Typography>
 
+
+
         <Box sx={iconsBoxStyles}>
           <IconButton color="inherit">
             <SearchIcon />
@@ -32,7 +33,16 @@ function Navbar() {
             <PermIdentity />
           </IconButton>
           <CartWidget />
+
+
         </Box>
+      </Toolbar>
+      <Toolbar sx={toolbarStyles}>
+        {optionsMenu.map((option) => (
+          <Button key={option} color="inherit">
+            {option}
+          </Button>
+        ))}
       </Toolbar>
     </AppBar>
   );

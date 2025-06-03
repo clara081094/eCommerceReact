@@ -11,7 +11,10 @@ export const toolbarStyles = {
   justifyContent: 'space-between',
   alignItems: 'center',
   minHeight: { xs: 56, md: 72 },
+  borderBottom: '1px solid #ccc',
 };
+
+
 
 export const titleStyles = {
   fontSize: { xs: '1rem', md: '1.5rem' },
