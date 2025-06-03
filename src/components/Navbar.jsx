@@ -18,7 +18,7 @@ import {
 function Navbar() {
     const optionsMenu = ['MUJER', 'HOMBRE', 'TEEN', 'NIÑOS', 'HOME'];
     return (
-    <AppBar position="static" color="default" elevation={1}>
+    <AppBar position="fixed" color="default" elevation={1}>
       <Toolbar sx={toolbarStyles}>
         <Typography variant="h6" component="h1">
           MI TIENDA
