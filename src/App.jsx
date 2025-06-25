@@ -1,24 +1,23 @@
 // App.jsx
 import Navbar from './components/Navbar';
 import ItemListContainer from './components/ItemListContainer';
-import { CssBaseline, Box } from '@mui/material';
+import ItemDetailContainer from './components/ItemDetailContainer';
+import NavigationError from './components/NavigationError';
+import { CssBaseline } from '@mui/material';
+import { BrowserRouter, Routes,  Route } from 'react-router';
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <CssBaseline />
       <Navbar />
-      <Box
-        sx={{
-          px: { xs: 5, sm: 15, md: 40, lg: 100 },
-          py: 4,
-          width: '100%',
-          margin: '0 auto',
-        }}
-      >
-        <ItemListContainer tempMessage="Aca estaran los productos" />
-      </Box>
-    </>
+      <Routes>
+        <Route path="*" element={<NavigationError/>} />
+        <Route path="/" element={<ItemListContainer/>} />
+        <Route path="/category/:categoryName" element={<ItemListContainer/>} />
+        <Route path="/item/:id" element={<ItemDetailContainer/>} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
