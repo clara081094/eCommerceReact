@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
+import { getItem } from '../firebase/db'
 import ItemDetail from './ItemDetail';
 
 function ItemDetailContainer() {
   const modelItem = {
-    title: '',
-    description: '',
-    price: 0,
-    thumbnail: '',
+    p_name: '',
+    p_description: '',
+    p_price: 0,
+    p_image: '',
   };
 
   const [item, setItem] = useState(modelItem);
@@ -16,13 +17,13 @@ function ItemDetailContainer() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`https://dummyjson.com/products/${id}`)
-      .then(res => res.json())
-      .then(res => {
+    getItem(id).then(res => {
         setItem(res);
         setLoading(false);
-      });
+    });
   }, [id]);
+
+  console.log(item)
 
   return <ItemDetail item={item} loading={loading} />;
 }

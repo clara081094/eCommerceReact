@@ -16,12 +16,12 @@ function ItemDetail({ item, loading }) {
       <Typography variant="h4" gutterBottom>{item.title}</Typography>
       <Box
         component="img"
-        src={item.thumbnail}
-        alt={item.title}
+        src={item.p_image}
+        alt={item.p_name}
         sx={{ width: '100%', maxWidth: 400, borderRadius: 2, mb: 2 }}
       />
-      <Typography variant="body1" sx={{ mb: 2 }}>{item.description}</Typography>
-      <Typography variant="h6" color="primary">Precio: ${item.price}</Typography>
+      <Typography variant="body1" sx={{ mb: 2 }}>{item.p_description}</Typography>
+      <Typography variant="h6" color="primary">Precio: ${item.p_price}</Typography>
       <ItemCount />
     </Container>
   );

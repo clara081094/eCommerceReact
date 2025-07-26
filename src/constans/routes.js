@@ -7,8 +7,8 @@ export const MENU = [
 ];
 
 export const CATEGORY_API = {
-  women: 'womens-dresses',
-  men: 'mens-shirts',
-  technology: 'laptops',
-  beauty: 'skin-care',
+  women: 'Women',
+  men: 'Men',
+  technology: 'Technology',
+  beauty: 'Beauty',
 };

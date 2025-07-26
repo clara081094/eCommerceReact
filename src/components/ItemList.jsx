@@ -18,8 +18,8 @@ function ItemList({ items, onItemClick }) {
               <TableCell>
                 <Box
                   component="img"
-                  src={item.thumbnail}
-                  alt={item.title}
+                  src={item.p_image}
+                  alt={item.p_name}
                   sx={{
                     width: '150px',
                     height: 'auto',
@@ -27,8 +27,8 @@ function ItemList({ items, onItemClick }) {
                   }}
                 />
               </TableCell>
-              <TableCell sx={{ minWidth: 150 }}>{item.title}</TableCell>
-              <TableCell sx={{ minWidth: 250 }}>{item.description}</TableCell>
+              <TableCell sx={{ minWidth: 150 }}>{item.p_name}</TableCell>
+              <TableCell sx={{ minWidth: 250 }}>{item.p_description}</TableCell>
               <TableCell>
                 <Button
                   variant="outlined"

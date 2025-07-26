@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router';
 import { CATEGORY_API } from '../constans/routes';
-import ItemList from './ItemList';
+import { getItems,getItemsByCategory } from '../firebase/db';
+import  ItemList  from './ItemList';
 
 function ItemListContainer() {
   const [items, setItems] = useState([]);
@@ -9,13 +10,13 @@ function ItemListContainer() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const categoryPath = categoryName ? CATEGORY_API[categoryName] : '';
-    const url = 'https://dummyjson.com/products';
-    const url_category = `https://dummyjson.com/products/category/${categoryPath}`;
+    const categoryPath = categoryName ? CATEGORY_API[categoryName] : null;
+    if(categoryPath) {
+      getItemsByCategory(categoryPath).then(res => setItems(res))
+    }else{
+      getItems().then(res => setItems(res))
+    }
 
-    fetch(categoryName ? url_category : url)
-      .then(res => res.json())
-      .then(data => setItems(data.products));
   }, [categoryName]);
 
   const handleItemClick = (id) => {
