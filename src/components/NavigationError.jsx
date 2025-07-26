@@ -1,22 +1,11 @@
 import { Box, Typography } from '@mui/material';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
+import { containerStyles, iconStyles } from '../styles/navigationError.styles';
 
 function NavigationError() {
-
   return (
-    <Box
-      sx={{
-        pt: { xs: 15, md: 20 },
-        width: '100vw',
-        height: '83.5vh',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        textAlign: 'center',
-      }}
-    >
-      <ErrorOutlineIcon color="error" sx={{ fontSize: 80}} />
+    <Box sx={containerStyles}>
+      <ErrorOutlineIcon color="error" sx={iconStyles} />
       <Typography variant="h4" color="error" gutterBottom>
         Oops! Pagina No encontrada
       </Typography>

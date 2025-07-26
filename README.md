@@ -1,12 +1,50 @@
-# React + Vite
+# Aplicación eCommerce React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Características
 
-Currently, two official plugins are available:
+- **Gestión del Carrito**:
+  - Agregar productos al carrito con cantidad.
+  - Eliminar productos individuales del carrito.
+  - Vaciar el carrito por completo.
+  - Mostrar el total de productos y el precio total en el carrito.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+  **Nota**: La funcionalidad de limitar la cantidad por producto no se implementó, ya que implicaba cambios en la base de datos y estaba alineada a cambios bajo sesión.
 
-## Expanding the ESLint configuration
+- **Navegación Dinámica**:
+  - Navegación SPA utilizando React Router.
+  - Rutas dinámicas para categorías de productos y detalles de productos.
+  - Manejo de errores para rutas inválidas con retroalimentación al usuario.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Integración con Firebase**:
+  - Obtener datos de productos desde Firestore.
+  - Filtrar productos por categoría y mostrar detalles de productos.
+  - Guardar órdenes de compra en Firestore con generación de ID único.
+
+- **Diseño Responsivo**:
+  - Estilizado utilizando Material-UI para un diseño consistente y responsivo.
+
+## Instalación
+
+1. Clonar el repositorio:
+   ```bash
+   git clone https://github.com/your-repo/eCommerceReact.git
+   ```
+2. Instalar dependencias:
+   ```bash
+   npm install
+   ```
+3. Iniciar el servidor de desarrollo:
+   ```bash
+   npm run dev
+   ```
+
+## Linting
+
+El proyecto utiliza ESLint con reglas específicas para React para garantizar la calidad del código. Ejecuta el comando de linting:
+```bash
+npm run lint
+```
+
+## FireBase
+![alt text](image.png)
+

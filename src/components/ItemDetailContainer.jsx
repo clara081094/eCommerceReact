@@ -23,8 +23,6 @@ function ItemDetailContainer() {
     });
   }, [id]);
 
-  console.log(item)
-
   return <ItemDetail item={item} loading={loading} />;
 }
 

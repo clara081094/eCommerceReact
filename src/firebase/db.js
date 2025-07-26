@@ -1,4 +1,4 @@
-import { getFirestore, collection, getDocs, query, where, doc, getDoc } from "firebase/firestore";
+import { getFirestore, collection, getDocs, query, where, doc, getDoc, addDoc } from "firebase/firestore";
 import { app } from "./config";
 
 const db = getFirestore(app)
@@ -36,3 +36,13 @@ export const getItem = async(id) => {
         console.log("No product")
     }
 }
+
+export const createDocument = async (collectionName, data) => {
+    try {
+        const docRef = await addDoc(collection(db, collectionName), data);
+        return docRef.id; 
+    } catch (error) {
+        console.error("Error creating document:", error);
+        throw error;
+    }
+};
